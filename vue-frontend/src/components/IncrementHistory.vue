@@ -30,7 +30,7 @@
   
   const fetchLogs = async () => {
     try {
-      const response = await axios.get('/api/increment-logs')
+      const response = await axios.get('/api/balance/history')
       logs.value = response.data
     } catch (error) {
       console.error('Error fetching increment logs:', error)

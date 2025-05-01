@@ -30,7 +30,7 @@
   
   const submitBalance = async () => {
     try {
-      const response = await axios.post('/api/set-balance', {
+      const response = await axios.post('/api/balance/set', {
         amount: amount.value
       })
       message.value = 'Initial balance set successfully!'

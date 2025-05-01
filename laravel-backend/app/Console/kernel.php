@@ -8,18 +8,11 @@ use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 class Kernel extends ConsoleKernel
 {
     /**
-     * Register the commands for the application.
-     */
-    protected $commands = [
-        Commands\IncrementBalance::class,
-    ];
-
-    /**
      * Define the application's command schedule.
      */
     protected function schedule(Schedule $schedule): void
     {
-        $schedule->command('balance:increment')->everyMinutes();
+        $schedule->command('balance:increment')->everyFiveMinutes();
     }
 
     /**
