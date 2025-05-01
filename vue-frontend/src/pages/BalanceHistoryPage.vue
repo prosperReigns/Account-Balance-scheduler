@@ -11,7 +11,7 @@
       </thead>
       <tbody>
         <tr v-for="item in history" :key="item.id">
-          <td class="border p-2">{{ item.created_at }}</td>
+          <td class="border p-2">{{ new Date(item.created_at).toLocaleString() }}</td>
           <td class="border p-2">{{ item.increment_amount }}</td>
           <td class="border p-2">{{ item.resulting_balance }}</td>
         </tr>
@@ -31,7 +31,7 @@ const history = ref([])
 onMounted(async () => {
   try {
     const res = await api.get('/balance/history');
-    history.value = res.data;
+    history.value = res.data.history;
   } catch (error) {
     console.error(error);
   }
